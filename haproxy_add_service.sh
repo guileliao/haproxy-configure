@@ -19,6 +19,7 @@ sed -i /#$1_begin#/,/#$1_end#/d haproxy.cfg
 cat>>haproxy.cfg<<EOF
 #$1_begin#	
 backend $1_backend
+balance roundrobin
 mode http
 #$1_end#
 EOF
