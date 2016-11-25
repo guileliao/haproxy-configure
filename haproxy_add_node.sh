@@ -12,5 +12,5 @@ fi
 if [[ $(grep "^#$1_end#" haproxy.cfg) = "" ]];then
 	echo "error:service backend is null." && exit
 else
-	sed -i /^#$1_end#/i\ "server "$2" "$3":"$4" check weight "$5"" haproxy.cfg
+	sed -i /^#$1_end#/i\ "server "$2" "$3":"$4" check weight "$5"" /etc/haproxy/haproxy.cfg
 fi
