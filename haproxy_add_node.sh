@@ -9,6 +9,18 @@
 if [[ $1 = "" ]];then
 	echo "error:service name is null." && exit
 fi
+if [[ $2 = "" ]];then
+	echo "error:node name is null." && exit
+fi
+if [[ $3 = "" ]];then
+	echo "error:node ipaddress is null." && exit
+fi
+if [[ $4 = "" ]];then
+	echo "error:node port is null." && exit
+fi
+if [[ $5 = "" ]];then
+	echo "error:weight value is null." && exit
+fi
 if [[ $(grep "^#$1_end#" haproxy.cfg) = "" ]];then
 	echo "error:service backend is null." && exit
 else
