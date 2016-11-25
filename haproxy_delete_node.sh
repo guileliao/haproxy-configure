@@ -9,4 +9,4 @@
 if [[ $2 = "" ]];then
 	echo "error:node name is null." && exit
 fi
-sed -i /"$2"/d haproxy.cfg
+sed -i /"$2"/d /etc/haproxy/haproxy.cfg
