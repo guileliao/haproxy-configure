@@ -21,7 +21,7 @@ fi
 if [[ $5 = "" ]];then
 	echo "error:weight value is null." && exit
 fi
-if [[ $(grep "^#$1_end#" haproxy.cfg) = "" ]];then
+if [[ $(grep "^#$1_end#" /etc/haproxy/haproxy.cfg) = "" ]];then
 	echo "error:service backend is null." && exit
 else
 	sed -i /^#$1_end#/i\ "server "$2" "$3":"$4" check weight "$5"" /etc/haproxy/haproxy.cfg
