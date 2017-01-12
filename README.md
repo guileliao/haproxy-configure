@@ -1,6 +1,12 @@
 # haproxy-configure
 haproxy配置工具
 
+1 安装方法
+
+将所有文件复制到“/usr/bin/”目录下即可。
+
+2 详细说明
+
 * haproxy_conf_init.sh<br>
 用途：初始化haproxy配置文件<br>
 参数数量：0<br>
