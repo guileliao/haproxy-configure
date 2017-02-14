@@ -34,6 +34,18 @@ defaults
     timeout http-keep-alive 10s
     timeout check           10s
     maxconn                 500
+#-------------
+#Stats monitor
+#-------------
+frontend stats_monitor
+        bind    *:30000
+        stats   enable
+        stats   uri     /stats
+        stats   auth    admin:admin
+        stats   admin   if      TRUE
+        stats   refresh 5s
+        stats   realm   baison-test-Haproxy
+#       stats   hide-version
 #--------------------
 #Application frontend
 #--------------------
